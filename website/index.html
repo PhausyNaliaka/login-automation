@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Login Page</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<h2>Login</h2>
+
+<form onsubmit="return validateLogin()">
+
+<label>Email:</label><br>
+<input type="text" id="email"><br><br>
+
+<label>Password:</label><br>
+<input type="password" id="password"><br><br>
+
+<button type="submit">Login</button>
+
+</form>
+
+<p id="error" style="color:red;"></p>
+
+<script>
+
+function validateLogin(){
+
+var email = document.getElementById("email").value;
+var password = document.getElementById("password").value;
+
+if(email == "test@test.com" && password == "123456"){
+window.location.href = "dashboard.html";
+return false;
+}
+
+else{
+document.getElementById("error").innerText = "Invalid email or password";
+return false;
+}
+
+}
+
+</script>
+
+</body>
+</html>
